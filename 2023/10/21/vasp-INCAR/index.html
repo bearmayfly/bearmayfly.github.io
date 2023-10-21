@@ -19,25 +19,30 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bearmayfly.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.1","exturl":true,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.json","localsearch":{"enable":"ture","trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="摸鱼快乐">
-<meta property="og:type" content="website">
-<meta property="og:title" content="bearmayfly">
-<meta property="og:url" content="https://bearmayfly.github.io/2023/10/index.html">
+    <meta name="description" content="vasp INCAR[TOC] NWRITE &#x3D; 0|1|2|3|4默认2 控制输出到OUTCAR文件信息的多少 PREC &#x3D; LOW|MEDIUM|HIGH|ACCURATE默认medium  三个作用：  未指定ENCUT，PREC控制ENCUT应取什么值。low 时 ENCUT取POTCAR中最小值ENMIN，medium或accurate时，ENCUT取POTCAR中最">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vasp_INCAR">
+<meta property="og:url" content="https://bearmayfly.github.io/2023/10/21/vasp-INCAR/index.html">
 <meta property="og:site_name" content="bearmayfly">
-<meta property="og:description" content="摸鱼快乐">
+<meta property="og:description" content="vasp INCAR[TOC] NWRITE &#x3D; 0|1|2|3|4默认2 控制输出到OUTCAR文件信息的多少 PREC &#x3D; LOW|MEDIUM|HIGH|ACCURATE默认medium  三个作用：  未指定ENCUT，PREC控制ENCUT应取什么值。low 时 ENCUT取POTCAR中最小值ENMIN，medium或accurate时，ENCUT取POTCAR中最">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://bearmayfly.github.io/2023/10/21/vasp-INCAR/vasp-INCAR/image-20231021130020159-1697865409702-4.png">
+<meta property="article:published_time" content="2023-10-21T05:04:48.000Z">
+<meta property="article:modified_time" content="2023-10-21T05:18:25.286Z">
 <meta property="article:author" content="周靖渝">
+<meta property="article:tag" content="vasp">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bearmayfly.github.io/2023/10/21/vasp-INCAR/vasp-INCAR/image-20231021130020159-1697865409702-4.png">
 
 
-<link rel="canonical" href="https://bearmayfly.github.io/2023/10/">
+<link rel="canonical" href="https://bearmayfly.github.io/2023/10/21/vasp-INCAR/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"en","comments":"","permalink":"","path":"2023/10/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://bearmayfly.github.io/2023/10/21/vasp-INCAR/","path":"2023/10/21/vasp-INCAR/","title":"vasp_INCAR"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Archive | bearmayfly</title>
+<title>vasp_INCAR | bearmayfly</title>
   
 
 
@@ -70,7 +75,7 @@
 
     <a href="/" class="brand" rel="start">
       <i class="logo-line"></i>
-      <h1 class="site-title">bearmayfly</h1>
+      <p class="site-title">bearmayfly</p>
       <i class="logo-line"></i>
     </a>
   </div>
@@ -123,7 +128,7 @@
   
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -136,6 +141,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vasp-INCAR"><span class="nav-number">1.</span> <span class="nav-text">vasp INCAR</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NWRITE-0-1-2-3-4"><span class="nav-number">1.1.</span> <span class="nav-text">NWRITE &#x3D; 0|1|2|3|4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PREC-LOW-MEDIUM-HIGH-ACCURATE"><span class="nav-number">1.2.</span> <span class="nav-text">PREC &#x3D; LOW|MEDIUM|HIGH|ACCURATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LORBIT"><span class="nav-number">1.3.</span> <span class="nav-text">LORBIT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NELECT"><span class="nav-number">1.4.</span> <span class="nav-text">NELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IBRION"><span class="nav-number">1.5.</span> <span class="nav-text">IBRION</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -165,69 +171,146 @@
 
     </div>
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 6 posts in total. Keep on posting.</span>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://bearmayfly.github.io/2023/10/21/vasp-INCAR/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/bear.gif">
+      <meta itemprop="name" content="周靖渝">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bearmayfly">
+      <meta itemprop="description" content="摸鱼快乐">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vasp_INCAR | bearmayfly">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vasp_INCAR
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="Created: 2023-10-21 13:04:48 / Modified: 13:18:25" itemprop="dateCreated datePublished" datetime="2023-10-21T13:04:48+08:00">2023-10-21</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>342</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="vasp-INCAR"><a href="#vasp-INCAR" class="headerlink" title="vasp INCAR"></a>vasp INCAR</h1><p>[TOC]</p>
+<h2 id="NWRITE-0-1-2-3-4"><a href="#NWRITE-0-1-2-3-4" class="headerlink" title="NWRITE &#x3D; 0|1|2|3|4"></a>NWRITE &#x3D; 0|1|2|3|4</h2><p>默认2 控制输出到OUTCAR文件信息的多少</p>
+<h2 id="PREC-LOW-MEDIUM-HIGH-ACCURATE"><a href="#PREC-LOW-MEDIUM-HIGH-ACCURATE" class="headerlink" title="PREC &#x3D; LOW|MEDIUM|HIGH|ACCURATE"></a>PREC &#x3D; LOW|MEDIUM|HIGH|ACCURATE</h2><p>默认medium </p>
+<p>三个作用：</p>
+<ul>
+<li>未指定ENCUT，PREC控制ENCUT应取什么值。low 时 ENCUT取POTCAR中最小值ENMIN，medium或accurate时，ENCUT取POTCAR中最大值ENMAX，high时，ENCUT取ENMAX的1.3倍</li>
+<li>控制FFT格子。PREC&#x3D;HIGH&#x2F;ACCURATE，在FFT时考虑了所有大小在两倍于平面波基最大波矢的G-矢量，因而不会有“warp around error”；PREC&#x3D;LOW&#x2F;MEDIUM，FFT格子大小只有high或accurate时候的3&#x2F;4</li>
+<li>采用实空间投影方法时，PREC决定ROPT（控制离子周围积分球中的格点数）的默认值</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>PREC</th>
+<th></th>
+<th>ROPT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>LOW</td>
+<td>700点</td>
+<td>0.67</td>
+</tr>
+<tr>
+<td>MEDIUM&#x2F;ACCURATE</td>
+<td>1000点</td>
+<td>1.0</td>
+</tr>
+<tr>
+<td>HIGH</td>
+<td>1500点</td>
+<td>1.5</td>
+</tr>
+</tbody></table>
+<h2 id="LORBIT"><a href="#LORBIT" class="headerlink" title="LORBIT"></a>LORBIT</h2><p>可以逻辑值可以整数值，默认为.FALSE.或0</p>
+<p>控制是否输出波函数到文件PROCAR和PROOUT中</p>
+<h2 id="NELECT"><a href="#NELECT" class="headerlink" title="NELECT"></a>NELECT</h2><p>电子数 一般不需要指定，会自动决定。当NELECT与从价电子和原子数目计算得到的电子数不相同时，将会产生一个均匀的背景电荷。</p>
+<h2 id="IBRION"><a href="#IBRION" class="headerlink" title="IBRION"></a>IBRION</h2><p>0,<strong>POTIM</strong>为分子动力学离子运动时间步长。单位FS</p>
+<p>1，2，3 <strong>POTIM</strong>为作用在力上的比例系数</p>
+<p>默认：    IBRION&#x3D;0时无默认值，需要用户指定</p>
+<p>​		IBRION&#x3D;1，2，3时，POTIM取0.5</p>
+<img src="/2023/10/21/vasp-INCAR/vasp-INCAR/image-20231021130020159-1697865409702-4.png" alt="image-20231021130020159" style="zoom: 50%;">
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-21T13:04:48+08:00"
-              content="2023-10-21">
-          10-21
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/21/vasp-INCAR/" itemprop="url">
-          <span itemprop="name">vasp_INCAR</span>
-        </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vasp/" rel="tag"><i class="fa fa-tag"></i> vasp</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/10/20/%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E7%AD%89/" rel="prev" title="世界第一等">
+                  <i class="fa fa-angle-left"></i> 世界第一等
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-10-20T09:26:01+08:00"
-              content="2023-10-20">
-          10-20
-        </time>
-      </div>
-
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/10/20/%E4%B8%96%E7%95%8C%E7%AC%AC%E4%B8%80%E7%AD%89/" itemprop="url">
-          <span itemprop="name">世界第一等</span>
-        </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
-  </div>
-  
-  
-  
+
+
+
 
 </div>
   </main>
